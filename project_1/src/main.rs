@@ -1,3 +1,7 @@
 fn main() {
-    println!("Hello, world!");
+    let message = "Name: Nick, Weight: ";
+    let weight = 170.0;
+
+    let kilos = weight / 2.2;
+    println!("{}{}", message, kilos);
 }

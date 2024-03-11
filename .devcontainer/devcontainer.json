@@ -11,7 +11,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"rust-lang.rust-analyzer"
 			],
 			"settings": {
 				"rust-analyzer.cargo.autoreload": true
