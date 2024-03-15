@@ -27,6 +27,14 @@ name = "exercise_5"
 version = "0.1.0"
 
 [[package]]
+name = "exercise_7"
+version = "0.1.0"
+
+[[package]]
+name = "exercise_8"
+version = "0.1.0"
+
+[[package]]
 name = "exersice_6"
 version = "0.1.0"
 
