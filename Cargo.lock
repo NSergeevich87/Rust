@@ -37,3 +37,15 @@ version = "0.1.0"
 [[package]]
 name = "project_4_error_handling_with_match"
 version = "0.1.0"
+
+[[package]]
+name = "project_5"
+version = "0.1.0"
+
+[[package]]
+name = "project_6"
+version = "0.1.0"
+
+[[package]]
+name = "project_7"
+version = "0.1.0"
