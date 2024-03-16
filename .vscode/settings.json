@@ -4,6 +4,10 @@
         ".\\exercise_3\\Cargo.toml",
         ".\\project_6\\Cargo.toml",
         ".\\project_7\\Cargo.toml",
-        ".\\exercise_7\\Cargo.toml"
+        ".\\exercise_7\\Cargo.toml",
+        ".\\project_8\\Cargo.toml",
+        ".\\project_10\\Cargo.toml",
+        ".\\project_11\\Cargo.toml",
+        ".\\exercise_9\\Cargo.toml"
     ]
 }

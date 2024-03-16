@@ -1,3 +1,5 @@
+use std::vec;
+
 fn ownership() {
     let vec_nums = vec![1, 2, 3, 4, 5];
     let slice = &vec_nums[..];
@@ -14,10 +16,22 @@ fn modifiable() {
 }
 
 fn get_item(index: usize) {
-    //let index_val = 3;
-    let vec_nums = vec![1, 2, 3, 4, 5];
-    let item = vec_nums.get(index).unwrap();
-    println!("item with index {} = {}", index, item);
+    let vec_nums = vec![12, 3, 4, 56, 5];
+    let item: i32;
+    match vec_nums.is_empty() {
+        true => panic!("Vector is empty"),
+        false => item = vec_nums[index],
+    }
+
+    println!("item = {}", item);
+}
+
+fn sum_vector(vec_nums: Vec<i32>) -> i32 {
+    let mut sum = 0;
+    for num in vec_nums {
+        sum += num;
+    }
+    sum
 }
 
 fn main() {
@@ -36,4 +50,7 @@ fn main() {
     }
 
     get_item(3);
+
+    let sum = sum_vector(vec_nums);
+    println!("sum = {}", sum);
 }
