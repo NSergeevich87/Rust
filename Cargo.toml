@@ -1,9 +1,0 @@
-workspace = { members = ["exercise_1", "exercise_2", "exercise_3", "exercise_4", "exercise_5", "exercise_6", "exercise_7", "exercise_8", "exercise_9", "project_10", "project_11", "project_4", "project_4_error_handling_with_match", "project_5", "project_6", "project_7", "project_8", "project_9"] }
-[package]
-name = "Rust"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]

@@ -8,6 +8,11 @@
         ".\\project_8\\Cargo.toml",
         ".\\project_10\\Cargo.toml",
         ".\\project_11\\Cargo.toml",
-        ".\\exercise_9\\Cargo.toml"
+        ".\\exercise_9\\Cargo.toml",
+        ".\\project_12\\Cargo.toml",
+        ".\\exercise_10_final_w3\\Cargo.toml",
+        ".\\my_library\\Cargo.toml",
+        ".\\project_13\\my_library\\Cargo.toml",
+        ".\\project_13\\my_library\\Cargo.toml"
     ]
 }
