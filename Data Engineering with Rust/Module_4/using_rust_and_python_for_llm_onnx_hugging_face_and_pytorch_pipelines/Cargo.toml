@@ -1,0 +1,8 @@
+[package]
+name = "using_rust_and_python_for_llm_onnx_hugging_face_and_pytorch_pipelines"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
