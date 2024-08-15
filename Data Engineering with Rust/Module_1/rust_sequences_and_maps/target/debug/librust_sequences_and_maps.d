@@ -1,0 +1,1 @@
+C:\Users\nikif\OneDrive\Документы\GitHub\Rust\Data\ Engineering\ with\ Rust\Module_1\rust_sequences_and_maps\target\debug\librust_sequences_and_maps.rlib: C:\Users\nikif\OneDrive\Документы\GitHub\Rust\Data\ Engineering\ with\ Rust\Module_1\rust_sequences_and_maps\src\lib.rs
