@@ -1,3 +1,66 @@
+/*
+This example code counts the frequency of each number in the vector.
+ */
+use std::collections::HashMap;
+
+fn logic(numbers: Vec<i32>) -> Vec<(i32, u32)> {
+    let mut frequencies = HashMap::new();
+
+    for num in numbers {
+        let frequency = frequencies.entry(num).or_insert(0);
+        *frequency += 1;
+    }
+
+    let mut result = Vec::new();
+
+    for (num, frequency) in frequencies {
+        result.push((num, frequency));
+    }
+
+    result
+}
+
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 3];
+    let result = logic(numbers);
+    //print the results in a human readable format that explains what the result is.
+    println!(
+        "The frequency of each number in the vector is: {:?}",
+        result
+    );
+}
+
+// use clap::Parser;
+// use rust_sequences_and_maps::create_fruit_salad;
+
+// #[derive(Parser)]
+// #[clap(
+//     version = "1.0",
+//     author = "Nikita <niknikitaser@gmail.com>",
+//     about = "Number of fruits to include in the salad"
+// )]
+// struct Opts {
+//     #[clap(short, long)]
+//     number: usize,
+// }
+
+// fn main() {
+//     let opts: Opts = Opts::parse();
+
+//     // Get the number of fruits the user requested
+//     let num_fruits = opts.number;
+
+//     // Create the fruit salad
+//     create_fruit_salad(num_fruits);
+
+//     // Print the fruit salad in human readable format with a count of fruits used
+//     println!(
+//         "Created Fruit salad with {} fruits: {:?}",
+//         num_fruits,
+//         create_fruit_salad(num_fruits)
+//     );
+// }
+
 // create main
 // fn main() {
 //     // create a vector of numbers
@@ -44,55 +107,124 @@ A VecDeque is a double-ended queue, which means that you can push and pop from b
 of the queue.
 */
 
-use rand::seq::SliceRandom; // rand is a random number generation library in Rust
-use rand::thread_rng;
-use std::collections::VecDeque;
+// use rand::seq::SliceRandom; // rand is a random number generation library in Rust
+// use rand::thread_rng;
+// use std::collections::LinkedList;
+// use std::collections::VecDeque;
 
-fn main() {
-    let mut fruit: VecDeque<&str> = VecDeque::new();
-    fruit.push_back("Arbutus");
-    fruit.push_back("Loquat");
-    fruit.push_back("Strawberry Tree Berry");
+// fn main() {
+//     let mut fruit: VecDeque<&str> = VecDeque::new();
+//     fruit.push_back("Arbutus");
+//     fruit.push_back("Loquat");
+//     fruit.push_back("Strawberry Tree Berry");
 
-    // Scramble (shuffle) the fruit
-    let mut rng = thread_rng();
-    let mut fruit: Vec<_> = fruit.into_iter().collect();
-    fruit.shuffle(&mut rng);
+//     // Scramble (shuffle) the fruit
+//     let mut rng = thread_rng();
+//     let mut fruit: Vec<_> = fruit.into_iter().collect();
+//     fruit.shuffle(&mut rng);
 
-    // Convert it back to VecDeque
-    let mut fruit: VecDeque<_> = fruit.into_iter().collect();
+//     // Convert it back to VecDeque
+//     let mut fruit: VecDeque<_> = fruit.into_iter().collect();
 
-    // Add fruits to the both ends of the queue after shuffling
-    fruit.push_front("Pomegranate");
-    fruit.push_back("Fig");
-    fruit.push_back("Cherry");
+//     // Add fruits to the both ends of the queue after shuffling
+//     fruit.push_front("Pomegranate");
+//     fruit.push_back("Fig");
+//     fruit.push_back("Cherry");
 
-    // ask to user to add a fruit to the front or to the back of the queue
-    println!("For add fruit to the front, type 'f' and for add fruit to the back, type 'b'");
-    let mut input = String::new();
-    std::io::stdin().read_line(&mut input).unwrap();
-    let input = input.trim();
+//     // ask to user to add a fruit to the front or to the back of the queue
+//     println!("For add fruit to the front, type 'f' and for add fruit to the back, type 'b'");
+//     let mut input = String::new();
+//     std::io::stdin().read_line(&mut input).unwrap();
+//     let input = input.trim();
 
-    let mut new_fruit = String::new();
-    if input == "f" {
-        println!("Enter the fruit to add to the front:");
-        std::io::stdin().read_line(&mut new_fruit).unwrap();
-        let input = new_fruit.trim(); // Create a new String from the trimmed input
-        fruit.push_front(input);
-    } else if input == "b" {
-        println!("Enter the fruit to add to the back:");
-        std::io::stdin().read_line(&mut new_fruit).unwrap();
-        let input = new_fruit.trim(); // Create a new String from the trimmed input
-        fruit.push_back(input);
-    }
+//     let mut new_fruit = String::new();
+//     if input == "f" {
+//         println!("Enter the fruit to add to the front:");
+//         std::io::stdin().read_line(&mut new_fruit).unwrap();
+//         let input = new_fruit.trim(); // Create a new String from the trimmed input
+//         fruit.push_front(input);
+//     } else if input == "b" {
+//         println!("Enter the fruit to add to the back:");
+//         std::io::stdin().read_line(&mut new_fruit).unwrap();
+//         let input = new_fruit.trim(); // Create a new String from the trimmed input
+//         fruit.push_back(input);
+//     }
 
-    // Print out the fruit salad
-    println!("Fruit Salad:");
-    for (i, item) in fruit.iter().enumerate() {
-        if i != fruit.len() - 1 {
-            print!("{}, ", item);
-        } else {
-            println!("{}", item);
-        }
-    }
-}
+//     let fruit: Vec<_> = fruit.into_iter().collect();
+//     let random_fruit = fruit.choose(&mut rng).unwrap();
+//     println!("Random fruit: {}", random_fruit);
+
+//     // Print out the fruit salad
+//     println!("Fruit Salad:");
+//     for (i, item) in fruit.iter().enumerate() {
+//         if i != fruit.len() - 1 {
+//             print!("{}, ", item);
+//         } else {
+//             println!("{}", item);
+//         }
+//     }
+
+//     let mut fruit: VecDeque<_> = fruit.into_iter().collect();
+
+//     // ask user to remove a fruit from the front or back of the queue
+//     println!(
+//         "For remove fruit from the front, type 'f' and for remove fruit from the back, type 'b'"
+//     );
+//     let mut input = String::new();
+//     std::io::stdin().read_line(&mut input).unwrap();
+//     let input = input.trim();
+//     if input == "f" {
+//         // show the fruit that will be removed
+//         println!(
+//             "Removing the fruit from the front: {}",
+//             fruit.front().unwrap()
+//         );
+//         fruit.pop_front();
+//     } else if input == "b" {
+//         // show the fruit that will be removed
+//         println!(
+//             "Removing the fruit from the back: {}",
+//             fruit.back().unwrap()
+//         );
+//         fruit.pop_back();
+//     }
+
+//     // Print out the fruit salad
+//     println!("Fruit Salad:");
+//     for (i, item) in fruit.iter().enumerate() {
+//         if i != fruit.len() - 1 {
+//             print!("{}, ", item);
+//         } else {
+//             println!("{}", item);
+//         }
+//     }
+
+//     let mut fruit: LinkedList<_> = fruit.into_iter().collect();
+//     // ask user to add a fruit to any position of the queue
+//     println!("Enter the fruit to add to any position:");
+//     let mut new_fruit = String::new();
+//     std::io::stdin().read_line(&mut new_fruit).unwrap();
+//     let input = new_fruit.trim(); // Create a new String from the trimmed input
+//     println!("Enter the position to add the fruit:");
+//     let mut position = String::new();
+//     std::io::stdin().read_line(&mut position).unwrap();
+//     let position: usize = position.trim().parse().unwrap();
+//     let mut index = 0;
+//     for item in fruit.iter_mut() {
+//         if index == position {
+//             *item = input;
+//             break;
+//         }
+//         index += 1;
+//     }
+
+//     // Print out the fruit salad
+//     println!("Fruit Salad:");
+//     for (i, item) in fruit.iter().enumerate() {
+//         if i != fruit.len() - 1 {
+//             print!("{}, ", item);
+//         } else {
+//             println!("{}", item);
+//         }
+//     }
+// }
