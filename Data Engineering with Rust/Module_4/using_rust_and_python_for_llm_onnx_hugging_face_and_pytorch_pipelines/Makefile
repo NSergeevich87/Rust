@@ -1,33 +1,13 @@
-# Makefile for Rust project
-
-# Define the name of your project
-# PROJECT_NAME = rust_sequences_and_maps
-
-# Define the default target
-.PHONY: all
-all: format lint test build
-
-# Format code using rustfmt
-.PHONY: format
 format:
-	cargo fmt
+	cargo fmt --quiet
 
-# Lint code using Clippy
-.PHONY: lint
 lint:
-	cargo clippy --all-targets --all-features -- -D warnings
+	cargo clippy --quiet
 
-# Run tests
-.PHONY: test
 test:
-	cargo test
+	cargo test --quiet
 
-# Build the project
-.PHONY: build
-build:
-	cargo build --release
+run:
+	cargo run
 
-# Clean build artifacts
-.PHONY: clean
-clean:
-	cargo clean
+all: format lint test run
